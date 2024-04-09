@@ -4,11 +4,11 @@ apt update
 apt upgrade -y
 termux-setup-storage
 apt install openssh -y
-touch $PREFIX/.ssh/authorized_keys
-chmod 600 $PREFIX/.ssh/authorized_keys
-chmod 700 $PREFIX/.ssh
+touch ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
 ssh-keygen
-cat $PREFIX/.ssh/id_rsa.pub >> $PREFIX/.ssh/authorized_keys
-chmod 600 $PREFIX/.ssh/authorized_keys
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
 sshd
 termux-open-url https://github.com/shouanzhong/TermuxSSHDsetup2024
