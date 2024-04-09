@@ -9,7 +9,7 @@ Scripts and notes for setting up and using SSHd on your Android device using Ter
   
   Enter this  command (automated install)
   
-     > curl -sSL https://raw.githubusercontent.com/tomhiggins/TermuxSSHDsetup/master/termuxsshdsetup.sh | bash
+     curl -sSL https://raw.githubusercontent.com/shouanzhong/TermuxSSHDsetup2024/master/termuxsshdsetup.sh | bash
  
  Or enter these commands (manual install)
      > apt update 
@@ -20,24 +20,24 @@ Scripts and notes for setting up and using SSHd on your Android device using Ter
      
      > apt install openssh
      
-     > touch ~/.ssh/authorized_keys
+     > touch $PREFIX/.ssh/authorized_keys
      
-     > chmod 600 ~/.ssh/authorized_keys
+     > chmod 600 $PREFIX/.ssh/authorized_keys
      
-     > chmod 700 ~/.ssh
+     > chmod 700 $PREFIX/.ssh
      
      > ssh-keygen
      
-     > cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+     > cat $PREFIX/.ssh/id_rsa.pub >> $PREFIX/.ssh/authorized_keys
      
-     > chmod 600 ~/.ssh/authorized_keys
+     > chmod 600 $PREFIX/.ssh/authorized_keys
      
      > sshd
 	 	 
 Move the need key to the remote host device you want to connect
 to your Android from 
 
-     > scp ~/.ssh/id_rsa name@remotehost.com:/path/of/id_rsa
+     > scp $PREFIX/.ssh/id_rsa name@remotehost.com:/path/of/id_rsa
 
 # To SSH into Android from the Remote Host
 
