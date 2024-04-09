@@ -1,9 +1,9 @@
 # A script to set up sshd into a termux install.
 #
 apt update
-apt upgrade
+apt upgrade -y
 termux-setup-storage
-apt install openssh
+apt install openssh -y
 touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 chmod 700 ~/.ssh
